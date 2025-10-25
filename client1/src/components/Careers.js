@@ -30,7 +30,7 @@ const Careers = () => {
     setSuccessMsg("");
 
     try {
-      const res = await axios.post("http://localhost:5000/send-otp", { email });
+      const res = await axios.post("https://code-nexux-1.onrender.com/send-otp", { email });
       if (res.data.success) {
         setOtpSent(true);
         setSuccessMsg("OTP sent successfully!");
@@ -53,7 +53,7 @@ const Careers = () => {
     setSuccessMsg("");
 
     try {
-      const res = await axios.post("http://localhost:5000/verify-otp", { email, otp });
+      const res = await axios.post("https://code-nexux-1.onrender.com/verify-otp", { email, otp });
       if (res.data.success) {
         setIsVerified(true);
         setSuccessMsg("Email verified successfully!");
@@ -79,7 +79,7 @@ const Careers = () => {
       return setErrorMsg("Fill all required fields.");
 
     try {
-      const res = await axios.post("http://localhost:5000/signup", {
+      const res = await axios.post("https://code-nexux-1.onrender.com/signup", {
         firstName,
         lastName,
         phone,
@@ -108,7 +108,9 @@ const Careers = () => {
     if (!email || !password) return setErrorMsg("Enter email and password");
 
     try {
-      const res = await axios.post("http://localhost:5000/login", { email, password });
+      // const res = await axios.post("http://localhost:5000/login", { email, password });
+            const res = await axios.post("https://code-nexux-1.onrender.com/login", { email, password });
+
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("role", res.data.role);
