@@ -490,7 +490,7 @@ app.get("/api/admin/generate-qr/:id", async (req, res) => {
   try {
     const { id } = req.params;
     // 🔗 Replace with your actual deployed frontend verify page
-    const verifyUrl = `http://localhost:3000/verify`;
+    const verifyUrl = `https://code-nexux-1.onrender.com/verify`;
     // for local testing use: `http://localhost:5173/verify/${id}`
 
     const qrImageData = await QRCode.toDataURL(verifyUrl);
