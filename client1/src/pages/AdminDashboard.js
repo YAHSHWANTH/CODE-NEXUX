@@ -179,7 +179,7 @@ const AdminDashboard = () => {
   // ✅ Updated QR state (simplified)
   const [qrData, setQrData] = useState(null); // Store QR + link
 
-  const BASE_URL = "http://localhost:5000/api/admin";
+  const BASE_URL = "https://code-nexux-1.onrender.com/api/admin";
 
   useEffect(() => {
     fetchData(activeTab);
