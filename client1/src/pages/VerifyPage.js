@@ -20,7 +20,7 @@ const VerifyPage = () => {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/verify/${uniqueId}`
+        `https://code-nexux-1.onrender.com/api/verify/${uniqueId}`
       );
       setCertificate(res.data.certificate);
       setError("");
